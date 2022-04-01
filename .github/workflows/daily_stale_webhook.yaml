@@ -1,0 +1,15 @@
+name: daily_hook
+
+on:
+  schedule:
+    - cron:  '0 18 * * *' #every day at noon, MST
+
+jobs:
+  send_hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow Webhook Action
+        uses: distributhor/workflow-webhook@v2.0.3
+        env:
+          webhook_url: "https://smee.io/ZD5XgDaDG32FaiWt"
+          webhook_secret: 4424469c58e5b128da98297fe4d9ff7a50a16bd2
